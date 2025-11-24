@@ -1,0 +1,55 @@
+
+TITLE:
+Tudu - Smart Task Management with Natural Language AI
+
+DESCRIPTION:
+An intelligent todo management application powered by Google Gemini 2.5 Flash that transforms natural language into structured tasks. Built with Next.js 16 and featuring a minimalistic, clean design, Tudu automatically parses task descriptions to extract titles, due dates, priorities, categories, tags, and checklist items. The app includes smart timezone handling (IST), optimistic UI updates with TanStack React Query, and responsive mobile-first design with collapsible filters.
+
+LINKS:
+Live Demo: https://tudu.splin.app
+
+SKILLS/TOOLS:
+Next.js 16, React 19, TypeScript, Google Gemini AI (2.5 Flash), PostgreSQL, Drizzle ORM, Tailwind CSS 4, TanStack React Query, Radix UI, Vaul Drawer, Vercel AI SDK
+
+KEY FEATURES:
+- Natural language task parsing (e.g., "Buy groceries tomorrow at 3pm" → structured todo)
+- Smart AI extraction of priorities, categories, tags, and due dates
+- Indian Standard Time (IST) timezone support with intelligent date parsing
+- Optimistic UI updates with automatic rollback on errors
+- Responsive mobile design with drawer-based filter interface
+- Real-time task statistics and completion tracking
+- Checklist items and task attachments support
+- 9 task categories: work, personal, shopping, health, finance, home, education, social, other
+- 4 priority levels: high, medium, low, none
+
+CONTRIBUTIONS:
+- Built full-stack application with Next.js App Router and PostgreSQL database
+- Integrated Google Gemini 2.5 Flash for natural language task parsing
+- Implemented TanStack React Query for pure mutations and optimistic updates
+- Designed minimalistic UI using only CSS variables for theming
+- Created responsive mobile-first interface with Vaul drawer components
+- Developed smart timezone handling for Indian Standard Time (UTC+5:30)
+- Built intelligent task ordering (incomplete first, by priority, by creation date)
+- Set up SEO optimization with dynamic metadata and Open Graph images
+
+TECHNICAL HIGHLIGHTS:
+- Zero refetches on mutations using TanStack React Query cache updates
+- Strict TypeScript typing with literal unions for categories and priorities
+- Database schema with relations: todos, todoChecklistItems, todoAttachments
+- AI prompt engineering for context-aware task interpretation
+- Mobile-optimized drawer interface with backdrop blur effects
+- Custom SQL ordering with CASE statements for priority sorting
+
+DATABASE SCHEMA:
+- todos: id, title, description, dueDate, priority, category, tags[], isCompleted,
+  isRecurring, recurrencePattern, createdAt, updatedAt, completedAt
+- todoChecklistItems: id, todoId, title, isCompleted, order, createdAt
+- todoAttachments: id, todoId, type, fileName, fileUrl, content, createdAt
+
+NATURAL LANGUAGE EXAMPLES:
+- "URGENT: Finish report by Friday 5pm" → High priority, work category, Friday 5pm IST
+- "Buy groceries tomorrow" → Shopping category, tomorrow 9am IST
+- "Call mom this weekend" → Social category, Saturday 10am IST
+- "Weekly team meeting every Monday at 10am" → Recurring task with pattern
+
+================================================================================
